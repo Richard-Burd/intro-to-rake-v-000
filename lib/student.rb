@@ -1,4 +1,12 @@
 require_relative "../config/environment.rb"
+require 'sqlite3'
+require 'pry'
+require 'active_record'
+
+connection = ActiveRecord::Base.establish_connection(
+  :adapter => "sqlite3",
+  :database => "db/cats.sqlite"
+)
 
 class Student < ActiveRecord::Base
 
